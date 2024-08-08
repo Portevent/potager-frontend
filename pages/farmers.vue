@@ -1,9 +1,9 @@
 <script setup lang="ts">
 
-import { Account, AccountTests, Fetcher } from '#imports';
+import { Farmer, FarmerTests, Fetcher } from '#imports';
 
-// let {status, data: accounts, error, clear, refresh} = Fetcher.get_accounts()
- function loadTestValues(){
+// let {status, data: accounts, error, clear, refresh} = Fetcher.get_farmers()
+function loadTestValues(){
 //	clear()
 	status.value = "done"
 }
@@ -14,11 +14,12 @@ function setLoading(){
 const error: string = ""
 const status = ref("done")
 const loading = computed(() => status.value === 'pending');
-const accounts: Account[] = AccountTests;
+const farmers: Farmer[] = FarmerTests;
+const mode = "presentation";
 </script>
 
 <template>
-	<h1>Accounts</h1>
+	<h1>Farmers</h1>
 	<div class="flex items-center space-x-4">
 		<UButton color="primary" variant="solid" @click="setLoading()" :loading="loading" label="Refresh"/>
 		<UButton color="primary" variant="outline" @click="loadTestValues()" label="Test"/>
@@ -28,13 +29,12 @@ const accounts: Account[] = AccountTests;
 	{{error}}
 	<List>
 		<div class="contents" v-if="loading">
-			<AccountDetailLoading />
-			<AccountDetailLoading />
-			<AccountDetailLoading />
-			<AccountDetailLoading />
+			<FarmerDetailLoading />
+			<FarmerDetailLoading />
+			<FarmerDetailLoading />
 		</div>
 		<div class="contents" v-else>
-			<AccountDetail v-for="account in accounts" :account="account"/>
+			<FarmerDetail v-for="farmer in farmers" :farmer="farmer" :mode="mode"/>
 		</div>
 	</List>
 </template>
