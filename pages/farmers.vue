@@ -15,7 +15,40 @@ const error: string = ""
 const status = ref("done")
 const loading = computed(() => status.value === 'pending');
 const farmers: Farmer[] = FarmerTests;
-const mode = "presentation";
+
+const modes = [
+	{
+		'label': 'Account',
+		'icon': 'i-carbon-person',
+	},
+	{
+		'label': 'Fight',
+		'icon': 'i-carbon-person',
+	},
+	{
+		'label': 'Detail',
+		'icon': 'i-carbon-person',
+	},
+	{
+		'label': 'Leek',
+		'icon': 'i-carbon-person',
+	},
+	{
+		'label': 'Social',
+		'icon': 'i-carbon-person',
+	},
+	{
+		'label': 'Misc',
+		'icon': 'i-carbon-person',
+	}
+]
+const mode = ref("");
+
+function changeMode(index: number){
+	mode.value = modes[index].label;
+}
+
+changeMode(0)
 </script>
 
 <template>
@@ -27,7 +60,8 @@ const mode = "presentation";
 		<UButton color="primary" icon="i-carbon-add" variant="solid" @click=""/>
 	</div>
 	{{error}}
-	<List>
+	<UTabs :items="modes" @change="changeMode" class="m-4"/>
+	<ResultBox>
 		<div class="contents" v-if="loading">
 			<FarmerDetailLoading />
 			<FarmerDetailLoading />
@@ -36,6 +70,6 @@ const mode = "presentation";
 		<div class="contents" v-else>
 			<FarmerDetail v-for="farmer in farmers" :farmer="farmer" :mode="mode"/>
 		</div>
-	</List>
+	</ResultBox>
 </template>
 

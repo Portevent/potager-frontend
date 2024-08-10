@@ -26,7 +26,7 @@ const accounts: Account[] = AccountTests;
 		<UButton color="primary" icon="i-carbon-add" variant="solid" @click=""/>
 	</div>
 	{{error}}
-	<List>
+	<ResultBox>
 		<div class="contents" v-if="loading">
 			<AccountDetailLoading />
 			<AccountDetailLoading />
@@ -36,6 +36,6 @@ const accounts: Account[] = AccountTests;
 		<div class="contents" v-else>
 			<AccountDetail v-for="account in accounts" :account="account"/>
 		</div>
-	</List>
+	</ResultBox>
 </template>
 

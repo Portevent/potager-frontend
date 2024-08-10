@@ -1,0 +1,72 @@
+Description :
+
+    id: number;
+    login: string;
+    team_id: number;
+    name: string;
+    habs: number;
+    crystals: number;
+    godsons_level: number;
+    godfather_id: number;
+    godsons_id: number[];
+
+
+Fight :
+    talent: number;
+    talent_more: number;
+    ranking: number;
+    victories: number;
+    draws: number;
+    defeats: number;
+    ratio: number;
+    in_garden: boolean;
+    won_solo_tournaments: number;
+    won_farmer_tournaments: number;
+    won_team_tournaments: number;
+    tournament_registered: boolean;
+    tournament_current: number;
+    won_battle_royale: number;
+    tournaments_enabled: boolean;
+    br_enabled: boolean;
+
+Detail :
+    last_connection: number;
+    register_date: number;
+    admin: boolean;
+    moderator: boolean;
+    country: string;
+    color: string;
+    banned: boolean;
+
+Leeks :
+    total_level: number;
+    leek_count: number;
+    fights: number;
+    team_fights: number;
+    can_create_leek: boolean;
+
+
+Social :
+    github: string;
+    website: string;
+    forum_messages: number;
+    contributor: boolean;
+    language: string;
+    title: string[];
+    trophies: number;
+    points: number;
+
+Status :
+    didactitiel_seen: boolean;
+    tutorial_progress: number;
+    verified: boolean;
+    bank_enabled: boolean;
+    public_chat_enabled: boolean;
+    buy_fights_enabled: boolean;
+    equipment_enabled: boolean;
+
+    show_ai_lines: boolean;
+    group: string;
+    supervised_group: string;
+    pass: boolean;
+    candidacy: string;
