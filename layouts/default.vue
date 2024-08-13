@@ -1,15 +1,10 @@
 <template>
-	<div class="flex flex-row overflow-hidden h-full content-stretch">
-		<AppScroll>
-			<AppNavigation class="pt-14"/>
-		</AppScroll>
-		<AppScroll class="flex-auto p-4">
-			<div class="pt-14"/>
-			<slot/>
-		</AppScroll>
-	</div>
-	<AppHeader/>
-
+    <div class="flex flex-row overflow-hidden h-full w-[100vw] content-stretch">
+            <AppNavigation class="pt-14"/>
+        <div class="flex-1 shrink p-4">
+            <div class="pt-14"/>
+            <slot/>
+        </div>
+    </div>
+    <AppHeader/>
 </template>
-<script setup lang="ts">
-</script>

@@ -6,15 +6,15 @@ const props = defineProps({
 	farmer: {type: Farmer, required: true}
 })
 
-const inTeam = props.farmer.team_id !== -1;
+const inTeam = props.farmer.team_id !== null;
 const hasGodson = props.farmer.godsons_level !== 0;
-const hasGodfather = props.farmer?.godfather_id !== -1;
+const hasGodfather = props.farmer?.godfather_id !== null;
 </script>
 
 <template>
 	<Column>
 		<Row>
-			<img class="w-14 h-14" src=""/>
+            <!-- <img class="w-14 h-14" src=""/> -->
 			<Column>
 				<Row>
 					<UTooltip :text="farmer.id + ' - ' + farmer.login">
@@ -27,8 +27,8 @@ const hasGodfather = props.farmer?.godfather_id !== -1;
 								  :tooltip="hasGodfather?('Godfather '+farmer.godfather_id):'No godfather'"/>
 				</Row>
 				<Row>
-					<ItemBadge item="Habs" icon="i-carbon-contour-finding" :amount="farmer.habs"/>
-					<ItemBadge item="Crystals" icon="i-carbon-assembly" :amount="farmer.crystals"/>
+					<ItemBadge color="orange" variant="subtle" badge_class="ring-gray-900" item="Habs" icon="i-carbon-contour-finding" :amount="farmer.habs"/>
+					<ItemBadge color="purple" variant="subtle" badge_class="ring-gray-900" item="Crystals" icon="i-carbon-assembly" :amount="farmer.crystals"/>
 
 					<ItemBadge item="Godsons Levels" icon="i-carbon-container-services" :amount="farmer.godsons_level"/>
 				</Row>

@@ -20,13 +20,15 @@ Fight :
     defeats: number;
     ratio: number;
     in_garden: boolean;
+
+Tournaments :
+    tournaments_enabled: boolean;
+    tournament_registered: boolean;
+    tournament_current: number;
     won_solo_tournaments: number;
     won_farmer_tournaments: number;
     won_team_tournaments: number;
-    tournament_registered: boolean;
-    tournament_current: number;
     won_battle_royale: number;
-    tournaments_enabled: boolean;
     br_enabled: boolean;
 
 Detail :
@@ -56,7 +58,7 @@ Social :
     trophies: number;
     points: number;
 
-Status :
+Misc :
     didactitiel_seen: boolean;
     tutorial_progress: number;
     verified: boolean;

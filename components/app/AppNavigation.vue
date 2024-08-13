@@ -1,25 +1,35 @@
 <script setup lang="ts">
+import {usePotagerStore} from "~/store/potager";
 
-const commons_links = [
+// access the `store` variable anywhere in the component ✨
+const store = usePotagerStore()
+const { accountsCount, farmersCount, leeksCount } = storeToRefs(store)
+
+Fetcher.store = usePotagerStore();
+
+// Dummy call to ensure the client has some data about accounts count
+Fetcher.get_accounts_count()
+
+const commons_links = computed(() => [
 	{
 		label: 'Accounts',
-		badge: 3,
+		badge: accountsCount.value,
 		icon: 'i-carbon-document',
 		to: '/accounts'
 	},
 	{
-		label: 'Farmer',
-		badge: 3,
+		label: 'Farmers',
+		badge: farmersCount.value,
 		icon: 'i-carbon-person',
 		to: '/farmers'
 	},
 	{
 		label: 'Leeks',
-		badge: 6,
+		badge: leeksCount.value,
 		icon: 'i-mdi-leek',
 		to: '/leeks'
 	}
-]
+])
 const tools_link = [
 	{
 		label: 'Charts',
@@ -32,13 +42,23 @@ const tools_link = [
 		to: '/dashboard'
 	}
 ];
+const debug_links = [
+	{
+		label: 'Potager Stats',
+		to: '/debug/potager-stats',
+		icon: 'i-carbon-gear'
+	}
+];
 
-const links = [commons_links, tools_link];
+const links = computed(() => [
+    commons_links.value, tools_link, debug_links
+]);
+
 const open = useState('open', () => true);
 </script>
 
 <template>
-	<div class="app-navigation bg-gray-100 dark:bg-gray-900 flex flex-col items-start">
+	<div class="bg-gray-100 dark:bg-gray-900 flex flex-col items-start">
 		<UButton size="sm"
 				 icon="i-carbon-list"
 				 color="gray"
@@ -49,9 +69,3 @@ const open = useState('open', () => true);
 		<UVerticalNavigation :links="links" class="transition-[max-width] overflow-hidden" :class="open?'max-w-96':'max-w-10'"/>
 	</div>
 </template>
-
-<style>
-.app-navigation{
-	animation: ;
-}
-</style>

@@ -8,7 +8,7 @@ class Farmer {
     victories: number;
     draws: number;
     defeats: number;
-    ratio: number;
+    ratio: string;
     last_connection: number;
     register_date: number;
     admin: boolean;
@@ -58,7 +58,7 @@ class Farmer {
     candidacy: string;
 
 
-    constructor(id: number, login: string, team_id: number, name: string, talent: number, talent_more: number, victories: number, draws: number, defeats: number, ratio: number, last_connection: number, register_date: number, admin: boolean, moderator: boolean, country: string, godfather_id: number, godsons_id: number[], color: string, banned: boolean, won_solo_tournaments: number, won_farmer_tournaments: number, won_team_tournaments: number, won_battle_royale: number, total_level: number, leek_count: number, in_garden: boolean, fights: number, team_fights: number, github: string, website: string, forum_messages: number, didactitiel_seen: boolean, contributor: boolean, trophies: number, points: number, language: string, title: string[], show_ai_lines: boolean, ranking: number, verified: boolean, tutorial_progress: number, group: string, supervised_group: string, bank_enabled: boolean, public_chat_enabled: boolean, buy_fights_enabled: boolean, tournaments_enabled: boolean, br_enabled: boolean, equipment_enabled: boolean, can_create_leek: boolean, godsons_level: number, pass: boolean, habs: number, crystals: number, tournament_registered: boolean, tournament_current: number, candidacy: string) {
+    constructor(id: number, login: string, team_id: number, name: string, talent: number, talent_more: number, victories: number, draws: number, defeats: number, ratio: string, last_connection: number, register_date: number, admin: boolean, moderator: boolean, country: string, godfather_id: number, godsons_id: number[], color: string, banned: boolean, won_solo_tournaments: number, won_farmer_tournaments: number, won_team_tournaments: number, won_battle_royale: number, total_level: number, leek_count: number, in_garden: boolean, fights: number, team_fights: number, github: string, website: string, forum_messages: number, didactitiel_seen: boolean, contributor: boolean, trophies: number, points: number, language: string, title: string[], show_ai_lines: boolean, ranking: number, verified: boolean, tutorial_progress: number, group: string, supervised_group: string, bank_enabled: boolean, public_chat_enabled: boolean, buy_fights_enabled: boolean, tournaments_enabled: boolean, br_enabled: boolean, equipment_enabled: boolean, can_create_leek: boolean, godsons_level: number, pass: boolean, habs: number, crystals: number, tournament_registered: boolean, tournament_current: number, candidacy: string) {
         this.id = id;
         this.login = login;
         this.team_id = team_id;
@@ -130,7 +130,7 @@ const FarmerTests: Farmer[] = [
         victories: 678,
         draws: 163,
         defeats: 694,
-        ratio: 0.8,
+        ratio: "0.8",
         last_connection: 13200,
         register_date: 120000,
         admin: false,
@@ -189,7 +189,7 @@ const FarmerTests: Farmer[] = [
         victories: 1786,
         draws: 268,
         defeats: 870,
-        ratio: 1.4,
+        ratio: "1.4",
         last_connection: 13200,
         register_date: 120000,
         admin: false,
@@ -248,7 +248,7 @@ const FarmerTests: Farmer[] = [
         victories: 25,
         draws: 16,
         defeats: 64,
-        ratio: 0.5,
+        ratio: "0.5",
         last_connection: 13200,
         register_date: 120000,
         admin: false,

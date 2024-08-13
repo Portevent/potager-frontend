@@ -8,7 +8,7 @@ defineProps({
 
 <template>
 	<Card>
-		<img class="w-14 h-14" src=""/>
-		Compte {{ account.name }}
+		Compte {{ account.name }}<br/>
+        {{account.mail}}
 	</Card>
 </template>

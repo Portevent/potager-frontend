@@ -7,8 +7,5 @@ defineProps({
 </script>
 
 <template>
-	<UTooltip :text="tooltip">
-		<UIcon :name="icon" class="w-5 h-5 ml-2"
-			   :class="'text-' + (valid ? 'green-400' : 'gray-400')"/>
-	</UTooltip>
+	<ValidityIcon :icon="icon" :tooltip="tooltip + ' ' + (valid?'enabled':'disabled')" :valid="valid" />
 </template>
