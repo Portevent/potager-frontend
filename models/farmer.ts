@@ -1,9 +1,9 @@
 class Farmer {
     id: number;
     login: string;
-    team_id: number;
     name: string;
     talent: number;
+    avatar_changed: number;
     talent_more: number;
     victories: number;
     draws: number;
@@ -30,7 +30,7 @@ class Farmer {
     github: string;
     website: string;
     forum_messages: number;
-    didactitiel_seen: boolean;
+    didacticiel_seen: boolean;
     contributor: boolean;
     trophies: number;
     points: number;
@@ -58,12 +58,12 @@ class Farmer {
     candidacy: string;
 
 
-    constructor(id: number, login: string, team_id: number, name: string, talent: number, talent_more: number, victories: number, draws: number, defeats: number, ratio: string, last_connection: number, register_date: number, admin: boolean, moderator: boolean, country: string, godfather_id: number, godsons_id: number[], color: string, banned: boolean, won_solo_tournaments: number, won_farmer_tournaments: number, won_team_tournaments: number, won_battle_royale: number, total_level: number, leek_count: number, in_garden: boolean, fights: number, team_fights: number, github: string, website: string, forum_messages: number, didactitiel_seen: boolean, contributor: boolean, trophies: number, points: number, language: string, title: string[], show_ai_lines: boolean, ranking: number, verified: boolean, tutorial_progress: number, group: string, supervised_group: string, bank_enabled: boolean, public_chat_enabled: boolean, buy_fights_enabled: boolean, tournaments_enabled: boolean, br_enabled: boolean, equipment_enabled: boolean, can_create_leek: boolean, godsons_level: number, pass: boolean, habs: number, crystals: number, tournament_registered: boolean, tournament_current: number, candidacy: string) {
+    constructor(id: number, login: string, name: string, talent: number, talent_more: number, avatar_changed: number, victories: number, draws: number, defeats: number, ratio: string, last_connection: number, register_date: number, admin: boolean, moderator: boolean, country: string, godfather_id: number, godsons_id: number[], color: string, banned: boolean, won_solo_tournaments: number, won_farmer_tournaments: number, won_team_tournaments: number, won_battle_royale: number, total_level: number, leek_count: number, in_garden: boolean, fights: number, team_fights: number, github: string, website: string, forum_messages: number, didactitiel_seen: boolean, contributor: boolean, trophies: number, points: number, language: string, title: string[], show_ai_lines: boolean, ranking: number, verified: boolean, tutorial_progress: number, group: string, supervised_group: string, bank_enabled: boolean, public_chat_enabled: boolean, buy_fights_enabled: boolean, tournaments_enabled: boolean, br_enabled: boolean, equipment_enabled: boolean, can_create_leek: boolean, godsons_level: number, pass: boolean, habs: number, crystals: number, tournament_registered: boolean, tournament_current: number, candidacy: string) {
         this.id = id;
         this.login = login;
-        this.team_id = team_id;
         this.name = name;
         this.talent = talent;
+        this.avatar_changed = avatar_changed;
         this.talent_more = talent_more;
         this.victories = victories;
         this.draws = draws;
@@ -90,7 +90,7 @@ class Farmer {
         this.github = github;
         this.website = website;
         this.forum_messages = forum_messages;
-        this.didactitiel_seen = didactitiel_seen;
+        this.didacticiel_seen = didactitiel_seen;
         this.contributor = contributor;
         this.trophies = trophies;
         this.points = points;
@@ -123,8 +123,9 @@ const FarmerTests: Farmer[] = [
     {
         id: 1,
         login: "farmer_a",
-        team_id: -1,
         name: "Farmer A",
+        team: null,
+        avatar_changed: 1,
         talent: 875,
         talent_more: 775,
         victories: 678,
@@ -152,7 +153,7 @@ const FarmerTests: Farmer[] = [
         github: "",
         website: "",
         forum_messages: 0,
-        didactitiel_seen: true,
+        didacticiel_seen: true,
         contributor: false,
         trophies: 520,
         points: 1250,
@@ -211,7 +212,7 @@ const FarmerTests: Farmer[] = [
         github: "hey",
         website: "hey.org",
         forum_messages: 154,
-        didactitiel_seen: true,
+        didacticiel_seen: true,
         contributor: false,
         trophies: 689,
         points: 1850,
@@ -270,7 +271,7 @@ const FarmerTests: Farmer[] = [
         github: "",
         website: "",
         forum_messages: 0,
-        didactitiel_seen: true,
+        didacticiel_seen: true,
         contributor: false,
         trophies: 20,
         points: 120,

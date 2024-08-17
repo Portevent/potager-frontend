@@ -60,7 +60,12 @@ async function addFake() {
     refresh()
 }
 
+async function goToFarmer(){
+    await navigateTo('farmers/public/' + farmerId.value.toString());
+}
+
 const loading = computed(() => status.value === 'pending');
+const farmerId = ref(76155)
 </script>
 
 <template>
@@ -71,6 +76,10 @@ const loading = computed(() => status.value === 'pending');
         <UButton color="primary" variant="outline" @click="loadTest()" label="Test"/>
         <UButton color="primary" icon="i-carbon-add" variant="solid" @click=""/>
         <UButton color="gray" icon="i-carbon-add" variant="solid" @click="addFake()" label="Add fake"/>
+        <UButtonGroup size="sm" orientation="horizontal">
+            <UInput v-model="farmerId"/>
+            <UButton icon="i-heroicons-clipboard-document" color="gray" @click="goToFarmer()" />
+        </UButtonGroup>
     </div>
 	{{error}}
 	<UTabs :items="modes" @change="changeMode" class="m-4"/>
