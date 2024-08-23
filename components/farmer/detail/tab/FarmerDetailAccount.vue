@@ -6,9 +6,9 @@ const props = defineProps({
 	farmer: {type: Farmer, required: true}
 })
 
-const inTeam = props.farmer.team_id !== null;
+const inTeam = props.farmer.team !== undefined;
 const hasGodson = props.farmer.godsons_level !== 0;
-const hasGodfather = props.farmer?.godfather_id !== null;
+const hasGodfather = props.farmer?.godfather_id !== undefined;
 </script>
 
 <template>
@@ -21,7 +21,7 @@ const hasGodfather = props.farmer?.godfather_id !== null;
 						{{ farmer.name }} <br/>
 					</UTooltip>
 					<ValidityIcon :valid="inTeam" icon="i-carbon-group"
-								  :tooltip="inTeam?('Team '+farmer.team_id):'No team'"/>
+								  :tooltip="inTeam?('Team '+farmer.team?.name):'No team'"/>
 
 					<ValidityIcon :valid="hasGodfather" icon="i-carbon-collaborate"
 								  :tooltip="hasGodfather?('Godfather '+farmer.godfather_id):'No godfather'"/>

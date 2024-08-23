@@ -27,6 +27,11 @@ export const Fetcher = {
             Fetcher.store.setFarmersCount(count)
         }
     },
+    setLeeksCount(count: number) {
+        if(Fetcher.store != null){
+            Fetcher.store.setLeeksCount(count)
+        }
+    },
     get_accounts: () => Fetch<Account[]>('accounts', (data: any) => {
         console.log('data accounts', data)
         Fetcher.setAccountsCount(data._data.length)
@@ -41,8 +46,15 @@ export const Fetcher = {
         console.log('data farmers', data)
         Fetcher.setFarmersCount(data._data.length)
     }),
+    get_farmer: (id: string ) => Fetch<Farmer>('farmers/' + id),
     get_public_farmer: (id: string ) => Fetch<Farmer>('farmers/public/' + id),
     add_fake_farmer: async () => await ClientFetch('farmers/fake'),
 
-    get_leeks: () => Fetch('leeks')
+    get_leeks: () => Fetch('leeks'),
+
+    get_counts: () => Fetch('potager/counts', (data: number[]) => {
+    Fetcher.setAccountsCount(data._data[0])
+    Fetcher.setFarmersCount(data._data[1])
+    Fetcher.setLeeksCount(data._data[2])
+})
 }

@@ -8,7 +8,7 @@ const { accountsCount, farmersCount, leeksCount } = storeToRefs(store)
 Fetcher.store = usePotagerStore();
 
 // Dummy call to ensure the client has some data about accounts count
-Fetcher.get_accounts_count()
+Fetcher.get_counts()
 
 const commons_links = computed(() => [
 	{

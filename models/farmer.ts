@@ -1,6 +1,9 @@
+import type {Team} from "~/models/team";
+
 class Farmer {
     id: number;
     login: string;
+    team: Team | undefined;
     name: string;
     talent: number;
     avatar_changed: number;
@@ -58,9 +61,10 @@ class Farmer {
     candidacy: string;
 
 
-    constructor(id: number, login: string, name: string, talent: number, talent_more: number, avatar_changed: number, victories: number, draws: number, defeats: number, ratio: string, last_connection: number, register_date: number, admin: boolean, moderator: boolean, country: string, godfather_id: number, godsons_id: number[], color: string, banned: boolean, won_solo_tournaments: number, won_farmer_tournaments: number, won_team_tournaments: number, won_battle_royale: number, total_level: number, leek_count: number, in_garden: boolean, fights: number, team_fights: number, github: string, website: string, forum_messages: number, didactitiel_seen: boolean, contributor: boolean, trophies: number, points: number, language: string, title: string[], show_ai_lines: boolean, ranking: number, verified: boolean, tutorial_progress: number, group: string, supervised_group: string, bank_enabled: boolean, public_chat_enabled: boolean, buy_fights_enabled: boolean, tournaments_enabled: boolean, br_enabled: boolean, equipment_enabled: boolean, can_create_leek: boolean, godsons_level: number, pass: boolean, habs: number, crystals: number, tournament_registered: boolean, tournament_current: number, candidacy: string) {
+    constructor(id: number, login: string, team: Team, name: string, talent: number, talent_more: number, avatar_changed: number, victories: number, draws: number, defeats: number, ratio: string, last_connection: number, register_date: number, admin: boolean, moderator: boolean, country: string, godfather_id: number, godsons_id: number[], color: string, banned: boolean, won_solo_tournaments: number, won_farmer_tournaments: number, won_team_tournaments: number, won_battle_royale: number, total_level: number, leek_count: number, in_garden: boolean, fights: number, team_fights: number, github: string, website: string, forum_messages: number, didactitiel_seen: boolean, contributor: boolean, trophies: number, points: number, language: string, title: string[], show_ai_lines: boolean, ranking: number, verified: boolean, tutorial_progress: number, group: string, supervised_group: string, bank_enabled: boolean, public_chat_enabled: boolean, buy_fights_enabled: boolean, tournaments_enabled: boolean, br_enabled: boolean, equipment_enabled: boolean, can_create_leek: boolean, godsons_level: number, pass: boolean, habs: number, crystals: number, tournament_registered: boolean, tournament_current: number, candidacy: string) {
         this.id = id;
         this.login = login;
+        this.team = team;
         this.name = name;
         this.talent = talent;
         this.avatar_changed = avatar_changed;
@@ -124,7 +128,7 @@ const FarmerTests: Farmer[] = [
         id: 1,
         login: "farmer_a",
         name: "Farmer A",
-        team: null,
+        team: undefined,
         avatar_changed: 1,
         talent: 875,
         talent_more: 775,
@@ -183,7 +187,8 @@ const FarmerTests: Farmer[] = [
     {
         id: 4,
         login: "farmer_d",
-        team_id: 10,
+        team: undefined,
+        avatar_changed: 1,
         name: "Farmer D",
         talent: 1525,
         talent_more: 976,
@@ -242,7 +247,8 @@ const FarmerTests: Farmer[] = [
     {
         id: 3,
         login: "farmer_c",
-        team_id: -1,
+        team: undefined,
+        avatar_changed: 1,
         name: "Farmer C",
         talent: 120,
         talent_more: -10,

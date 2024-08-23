@@ -1,36 +1,31 @@
 class Account{
     id: number;
-    name: string;
+    login: string;
     mail: string;
-    password: string;
 
 
-    constructor(id: number, name: string, mail: string, password: string) {
+    constructor(id: number, login: string, mail: string) {
         this.id = id;
-        this.name = name;
+        this.login = login;
         this.mail = mail;
-        this.password = password;
     }
 }
 
 const AccountTests = [
     {
         id: -1,
-        name: 'test',
-        mail: 'test@mail',
-        password: 'pass'
+        login: 'test',
+        mail: 'test@mail'
     },
     {
         id: -2,
-        name: 'test 2',
-        mail: 'test@mail',
-        password: 'pass'
+        login: 'test 2',
+        mail: 'test@mail'
     },
     {
         id: -3,
-        name: 'test 3',
-        mail: 'test@mail',
-        password: 'pass'
+        login: 'test 3',
+        mail: 'test@mail'
     }
 ]
 
